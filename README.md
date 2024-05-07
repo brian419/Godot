@@ -42,4 +42,4 @@ The game's storyline involves the player discovering an unknown world filled wit
 
 ## Future Plans
 
-In future updates, we plan to compare and contrast this Godot version with the original HTML CANVAS version of the game to highlight the strengths and improvements of each platform. Stay tuned for more updates and enhancements to the gameplay experience.
+In future updates, I plan to compare and contrast this Godot version with the original HTML CANVAS version of the game to highlight the strengths and improvements of each platform. Stay tuned for more updates and enhancements to the gameplay experience.
