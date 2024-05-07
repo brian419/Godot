@@ -5,7 +5,7 @@
 
 This will be a repository documenting my learning for making games within Godot. 
 
-# Programmer's Peronal Notes 
+# Programmer's Personal Notes 
 I am accessing Pixilart.com to generate my pixel asset sprites for the time being. Game 2 implementation needs: flying enemies (towards player off immediate spawning), animation frames for player knight and enemy, health bar functionality, one weapon for player, better player movement. 
 
 ## Project 2 Overview
