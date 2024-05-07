@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_hwcd1"]
 [ext_resource type="PackedScene" uid="uid://coavafh0kcbd" path="res://scenes/player.tscn" id="1_jge0r"]
-[ext_resource type="Texture2D" uid="uid://bd65ydc65feby" path="res://assets/sprites/world_tileset.png" id="2_ig4ls"]
+[ext_resource type="Texture2D" path="res://assets/sprites/world_tileset.png" id="2_ig4ls"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ksuj4"]
 texture = ExtResource("2_ig4ls")
