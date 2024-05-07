@@ -41,7 +41,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"move",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yg8t1"]
@@ -57,7 +57,7 @@ scale = Vector2(1.2125, 0.845)
 sprite_frames = SubResource("SpriteFrames_n7hbw")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.0857219
+frame_progress = 0.169054
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
