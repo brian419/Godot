@@ -403,10 +403,10 @@ format = 2
 layer_0/tile_data = PackedInt32Array(262145, 0, 1, 262144, 0, 1, 327679, 0, 1, 327678, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 1, 262153, 0, 1, 262154, 0, 1, 262155, 0, 1, 262156, 0, 1, 262157, 0, 1, 327674, 0, 1, 327673, 0, 1, 327672, 0, 1, 327671, 0, 1, 327670, 0, 1, 327669, 0, 1, 262152, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_jge0r")]
-position = Vector2(27, 60)
+position = Vector2(16, 59)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(1, -19)
+position = Vector2(2, -9)
 zoom = Vector2(4, 4)
 limit_bottom = 120
 limit_smoothed = true
