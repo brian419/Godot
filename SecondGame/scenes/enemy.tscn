@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwhncm1pvflbl"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_gev4s"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemy.png" id="2_fbxfr"]
+[ext_resource type="Texture2D" uid="uid://bj25cpb6m5ewh" path="res://assets/sprites/enemy.png" id="2_fbxfr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n4xnw"]
 atlas = ExtResource("2_fbxfr")
@@ -36,3 +36,5 @@ frame_progress = 0.575583
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_cy5dt")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

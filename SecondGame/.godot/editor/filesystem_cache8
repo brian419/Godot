@@ -1,0 +1,42 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1715199644
+icon 2.svg::CompressedTexture2D::2012527170380666467::1715110667::1715199645::1::::<><>::
+icon.svg::CompressedTexture2D::11165662777136408::1715111012::1715111012::1::::<><>::
+::res://assets/::1715116012
+inspiration 2.png::CompressedTexture2D::7969905714879401811::1715110667::1715199648::1::::<><>::
+inspiration.png::CompressedTexture2D::4508730948015115873::1715111012::1715111012::1::::<><>::
+::res://assets/fonts/::1715116012
+placeholder.png::CompressedTexture2D::2127690353946953041::1671240367::1715112102::1::::<><>::
+::res://assets/music/::1715116012
+placeholder.png::CompressedTexture2D::8653827301786859682::1671240367::1715112102::1::::<><>::
+::res://assets/sounds/::1715116012
+placeholder.png::CompressedTexture2D::2239291822356553498::1671240367::1715112102::1::::<><>::
+::res://assets/sprites/::1715115966
+blocks 2.png::CompressedTexture2D::3764178619619132238::1715110667::1715199649::1::::<><>::
+blocks.png::CompressedTexture2D::1763992309939418944::1715111012::1715111012::1::::<><>::
+enemy 2.png::CompressedTexture2D::6686368006726094100::1715110667::1715199645::1::::<><>::
+enemy.png::CompressedTexture2D::3075684347986585427::1715111012::1715111012::1::::<><>::
+enemyfornow 2.png::CompressedTexture2D::9050868342777606040::1715110667::1715199645::1::::<><>::
+enemyfornow.png::CompressedTexture2D::7018161310721092789::1715111012::1715111012::1::::<><>::
+Knight 2.png::CompressedTexture2D::6528843915953570761::1715110667::1715199645::1::::<><>::
+knight-pixilart 2.png::CompressedTexture2D::6601955758676683129::1715110667::1715199645::1::::<><>::
+knight-pixilart.png::CompressedTexture2D::6950986375578991678::1715111012::1715111012::1::::<><>::
+Knight.png::CompressedTexture2D::1691621548129066208::1715111012::1715111012::1::::<><>::
+world_tileset 2.png::CompressedTexture2D::776053929061276852::1715110667::1715199645::1::::<><>::
+world_tileset.png::CompressedTexture2D::2662847455928211378::1715111012::1715111012::1::::<><>::
+::res://scenes/::1715116012
+enemy 2.tscn::PackedScene::3945819451656926001::1715110721::0::1::::<><>::res://scripts/enemy.gd<>res://assets/sprites/enemy.png
+enemy.tscn::PackedScene::3945819451656926001::1715112364::0::1::::<><>::res://scripts/enemy.gd<>res://assets/sprites/enemy.png
+game 2.tscn::PackedScene::5994523313271548237::1715110715::0::1::::<><>::res://scripts/game.gd<>uid://coavafh0kcbd::::res://scenes/player.tscn<>res://assets/sprites/world_tileset.png
+game.tscn::PackedScene::5994523313271548237::1715112364::0::1::::<><>::res://scripts/game.gd<>uid://coavafh0kcbd::::res://scenes/player.tscn<>res://assets/sprites/world_tileset.png
+player 2.tscn::PackedScene::169316485580778285::1715110720::0::1::::<><>::res://scripts/player.gd<>res://assets/sprites/Knight.png
+player.tscn::PackedScene::169316485580778285::1715112364::0::1::::<><>::res://scripts/player.gd<>res://assets/sprites/Knight.png
+test 2.tscn::PackedScene::5264637225006042830::1715110667::0::1::::<><>::uid://dorgj1jfbfknx::::res://assets/sprites/testknight-pixilart.png
+test.tscn::PackedScene::5264637225006042830::1715111012::0::1::::<><>::uid://dorgj1jfbfknx::::res://assets/sprites/testknight-pixilart.png
+::res://scripts/::1715115960
+enemy 2.gd::GDScript::-1::1715110667::0::1::::<>Area2D<>::
+enemy.gd::GDScript::-1::1715111012::0::1::::<>Area2D<>::
+game 2.gd::GDScript::-1::1715110717::0::1::::<>Node2D<>::
+game.gd::GDScript::-1::1715111029::0::1::::<>Node2D<>::
+player 2.gd::GDScript::-1::1715110667::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1715111012::0::1::::<>CharacterBody2D<>::
