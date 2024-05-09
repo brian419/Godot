@@ -4,4 +4,3 @@ extends Area2D
 	#print("Collision detected")
 	#queue_free()
 	#
-

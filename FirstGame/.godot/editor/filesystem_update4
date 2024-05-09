@@ -4,3 +4,4 @@ res://scenes/platform.tscn
 res://scenes/coin.tscn
 res://scenes/killzone.tscn
 res://scenes/slime.tscn
+res://scripts/killzone.gd
