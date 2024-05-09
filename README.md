@@ -9,6 +9,8 @@ This will be a repository documenting my learning for making games within Godot.
 # Programmer's Personal Notes 
 I am accessing Pixilart.com to generate my pixel asset sprites for the time being. Game 2 implementation needs: animation frames for player knight jump and enemy (all their motions), health bar functionality (need to implement one that stays on one part of the screen?), weapon for player (need to figure out how to attach it to the player? update weapon sprite as well, the logic for collision already written and works for placed weapon on game scene), better player movement overall. 
 
+Don't forget for later use: I used "convert 1.png 2.png 3.png -append result.png" and it puts the frames in one image horizontally. 
+
 ## Project 2 Overview
 
 This is a Godot game project focusing on an open-world 2D environment with a dynamic spawning system for enemies. The player will explore various scenes including shops, dungeons, and interact with different elements like castles, portals, and special blocks. The game incorporates RPG elements such as leveling up, earning skill points, purchasing weapons and potions, and facing diverse enemy types.
