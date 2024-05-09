@@ -56,7 +56,7 @@ func _process(delta):
 					var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
 					sprite.scale.x = -1  # Flip horizontally
 			var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
-			sprite.play("move")	
+			sprite.play("move")
 
 		else:
 			# If the enemy is not moving, play the idle animation
@@ -74,10 +74,19 @@ func _on_body_entered(body):
 			body.get_node("CollisionShape2D").queue_free()
 			timer_for_health_death.start()
 
+	#if body.is_in_group("WeaponSword"):
+		#if enemy_instance and not enemy_instance.is_queued_for_deletion():
+			#if body in enemy_instance.get_overlapping_bodies():
+				#enemy_instance.queue_free()
+				#enemy_instances.erase(enemy_instance)
+				
 	if body.is_in_group("WeaponSword"):
-		if body in enemy_instance.get_overlapping_bodies():
-				enemy_instance.queue_free()
-				enemy_instances.erase(enemy_instance)
+		for enemy in enemy_instances:
+			if enemy and not enemy.is_queued_for_deletion():
+				if body in enemy.get_overlapping_bodies():
+					enemy.queue_free()
+					enemy_instances.erase(enemy)
+					break
 	else:
 		pass
 		
