@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwhncm1pvflbl"]
+[gd_scene load_steps=9 format=3 uid="uid://bwhncm1pvflbl"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_gev4s"]
 [ext_resource type="Texture2D" uid="uid://cvc3jqgbni2lj" path="res://assets/sprites/enemies/enemy1/EnemyIdleFrame1.png" id="2_uxhuq"]
@@ -6,10 +6,6 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tnqg"]
 atlas = ExtResource("2_uxhuq")
-region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_612pi"]
-atlas = ExtResource("3_lvuig")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ri0e1"]
@@ -31,9 +27,6 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_612pi")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ri0e1")
 }, {
@@ -58,7 +51,7 @@ scale = Vector2(0.745, 0.565)
 sprite_frames = SubResource("SpriteFrames_b2kcf")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.352314
+frame_progress = 0.728643
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)

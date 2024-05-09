@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://crn16nf3j6xx2"]
+[gd_scene load_steps=15 format=3 uid="uid://crn16nf3j6xx2"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_hwcd1"]
 [ext_resource type="PackedScene" uid="uid://coavafh0kcbd" path="res://scenes/player.tscn" id="1_jge0r"]
 [ext_resource type="Texture2D" uid="uid://bd65ydc65feby" path="res://assets/sprites/world_tileset.png" id="2_ig4ls"]
+[ext_resource type="PackedScene" uid="uid://rokx2vksi6we" path="res://scenes/Healthbar.tscn" id="2_n3vi3"]
 [ext_resource type="PackedScene" uid="uid://c5jbjxx6vbkyo" path="res://scenes/killzone.tscn" id="4_7kucx"]
 [ext_resource type="PackedScene" uid="uid://dsopkvm2kkkwh" path="res://scenes/platform.tscn" id="5_r74mh"]
 [ext_resource type="PackedScene" uid="uid://ddjvc1cuk5miy" path="res://scenes/weapon_sword.tscn" id="6_g57vg"]
@@ -471,6 +472,8 @@ _data = {
 "RESET": SubResource("Animation_wtlon")
 }
 
+[sub_resource type="GDScript" id="GDScript_4q711"]
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_hwcd1")
 
@@ -512,9 +515,19 @@ autoplay = "Platform1"
 
 [node name="WeaponSword" parent="Weapons" instance=ExtResource("6_g57vg")]
 position = Vector2(41, 50)
+motion_mode = 1
 
 [node name="TimerForHealthDeath" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerHealthBar" parent="CanvasLayer" instance=ExtResource("2_n3vi3")]
+offset_left = 42.0
+offset_top = 1.0
+offset_right = 42.0
+offset_bottom = 1.0
+script = SubResource("GDScript_4q711")
 
 [connection signal="timeout" from="TimerForHealthDeath" to="." method="_on_timer_for_health_death_timeout"]

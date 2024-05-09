@@ -1,8 +1,11 @@
-res://scenes/enemy.tscn
-res://scripts/game.gd
 res://scenes/game.tscn
+res://scripts/game.gd
 res://scenes/player.tscn
+res://scenes/enemy.tscn
 res://scenes/killzone.tscn
 res://scenes/platform.tscn
 res://scenes/weapon_sword.tscn
+res://scenes/Healthbar.tscn
+res://scripts/Healthbar.gd
 res://scripts/enemy.gd
+res://scripts/ProgressBar.gd

@@ -1,3 +1,6 @@
+CanvasLayer
+Control
+ProgressBar
 Timer
 Node
 CollisionShape2D
@@ -10,4 +13,3 @@ NavigationAgent2D
 Area2D
 TileMap
 StaticBody2D
-Camera2D
