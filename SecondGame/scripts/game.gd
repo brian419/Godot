@@ -6,11 +6,10 @@ var enemy_instance
 var player
 var original_healthbar = 200
 var current_healthbar = original_healthbar
+var random_speed
+
 
 @onready var timer_for_health_death = $TimerForHealthDeath
-
-
-
 
 
 
@@ -47,14 +46,30 @@ func spawn_enemy(num_enemies):
 		
 		
 func _process(delta):
+	var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
 	# Move enemies towards the player
 	for enemy_instance in enemy_instances:
 		if player and enemy_instance.position.distance_to(player.position) > 100:
 			var direction = (player.position - enemy_instance.position).normalized()
-			var random_speed = (randf_range(50,100))  # Adjust as needed
-			enemy_instance.position += direction * random_speed * delta
-		
-		
+			sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
+			random_speed = (randf_range(50,100))  # Adjust as needed
+			enemy_instance.position += direction * random_speed * delta	
+			if direction.x > 0:
+				if enemy_instance.has_node("EnemyAnimatedSprite2D"):
+					sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
+					sprite.scale.x = 1  # Flip horizontally
+			if direction.x < 0:
+				if enemy_instance.has_node("EnemyAnimatedSprite2D"):
+					sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
+					sprite.scale.x = -1  # Flip horizontally
+			
+			sprite.play("move")	#enemy_instance.enemy_animated_sprite.scale = -1
+		else:
+			# If the enemy is not moving, play the idle animation
+			if enemy_instance.has_node("EnemyAnimatedSprite2D"):
+				sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
+				sprite.play("idle")
+	
 		
 func _on_body_entered(body):
 	if body.is_in_group("player"):
@@ -80,10 +95,6 @@ func _on_body_entered(body):
 		pass
 		
 		
-
-	
-
-
 
 func _on_timer_for_health_death_timeout():
 	Engine.time_scale = 1.0
