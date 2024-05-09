@@ -1,5 +1,5 @@
 [Current State of the Second Godot Game Development](SecondGame/CurrentState5:08:2024.gif)
-[TEST VIDEO](SecondGame/CurrentState5:09:2024.mov)
+
 # Godot Game Development Projects
 
 ## Overview 
