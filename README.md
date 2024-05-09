@@ -11,6 +11,8 @@ I am accessing Pixilart.com to generate my pixel asset sprites for the time bein
 
 What I'm using in the terminal command:
 -Adding multiple png frames into one png frame for animation import) "convert 1.png 2.png 3.png -append result.png" and it puts the frames in one image horizontally. 
+
+
 -Converting Screenrecord video (.mov) into (.gif) using the following command line) ffmpeg -i "NameOfVideo.mov" -i palette.png -lavfi "fps=15,scale=640:-1:flags=lanczos [x]; [x][1:v] paletteuse=dither=bayer:bayer_scale=5" -y VideoOutputName.gif
 
 
