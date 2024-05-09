@@ -1,4 +1,4 @@
-[Current State](SecondGame/CurrentState5:08:2024.gif)
+[Current State of the Second Godot Game Development](SecondGame/CurrentState5:08:2024.gif)
 
 # Godot Game Development Projects
 
