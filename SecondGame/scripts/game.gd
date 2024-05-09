@@ -46,28 +46,28 @@ func spawn_enemy(num_enemies):
 		
 		
 func _process(delta):
-	var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
+	#var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
 	# Move enemies towards the player
 	for enemy_instance in enemy_instances:
 		if player and enemy_instance.position.distance_to(player.position) > 100:
 			var direction = (player.position - enemy_instance.position).normalized()
-			sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
+			#var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
 			random_speed = (randf_range(50,100))  # Adjust as needed
 			enemy_instance.position += direction * random_speed * delta	
 			if direction.x > 0:
 				if enemy_instance.has_node("EnemyAnimatedSprite2D"):
-					sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
+					var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
 					sprite.scale.x = 1  # Flip horizontally
 			if direction.x < 0:
 				if enemy_instance.has_node("EnemyAnimatedSprite2D"):
-					sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
+					var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
 					sprite.scale.x = -1  # Flip horizontally
-			
+			var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
 			sprite.play("move")	#enemy_instance.enemy_animated_sprite.scale = -1
 		else:
 			# If the enemy is not moving, play the idle animation
 			if enemy_instance.has_node("EnemyAnimatedSprite2D"):
-				sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
+				var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
 				sprite.play("idle")
 	
 		
