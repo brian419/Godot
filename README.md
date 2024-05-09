@@ -10,6 +10,8 @@ This will be a repository documenting my learning for making games within Godot.
 I am accessing Pixilart.com to generate my pixel asset sprites for the time being. Game 2 implementation needs: animation frames for player knight jump and enemy (all their motions), health bar functionality (need to implement one that stays on one part of the screen?), weapon for player (need to figure out how to attach it to the player? update weapon sprite as well, the logic for collision already written and works for placed weapon on game scene), better player movement overall. 
 
 What I'm using in the terminal command:
+
+
 -Adding multiple png frames into one png frame for animation import) "convert 1.png 2.png 3.png -append result.png" and it puts the frames in one image horizontally. 
 
 
