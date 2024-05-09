@@ -1,4 +1,4 @@
-![Current State](SecondGame/CurrentState.gif)
+[Current State](SecondGame/CurrentState.gif)
 
 # Godot Game Development Projects
 
