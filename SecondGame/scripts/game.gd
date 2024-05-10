@@ -47,7 +47,7 @@ func spawn_enemy(num_enemies):
 			enemy_instance.set_process(true)
 		
 func spawn_health_potions(num_potions, player_position):
-	max_number_health_potions = (num_potions / 10)
+	max_number_health_potions = (num_potions / 30)
 	print("Max number of health potions: ", max_number_health_potions)
 	var tilemap = get_node("TileMap") 
 	var tileset = tilemap.tile_set
