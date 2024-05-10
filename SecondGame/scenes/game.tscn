@@ -533,11 +533,6 @@ offset_right = 42.0
 offset_bottom = 1.0
 script = SubResource("GDScript_4q711")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HotBar1" parent="UI/HBoxContainer" instance=ExtResource("8_4huin")]
-layout_mode = 2
+[node name="HotBar" parent="UI/CanvasLayer" instance=ExtResource("8_4huin")]
 
 [connection signal="timeout" from="TimerForHealthDeath" to="." method="_on_timer_for_health_death_timeout"]
