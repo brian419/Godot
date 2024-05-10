@@ -48,8 +48,11 @@ func _input(event):
 		onItemButtonPressed(2)
 
 
-
-
-
 func _on_game_half_health():
 	checkHalfHealth += 1
+
+
+func _on_game_picked_up_health_potion():
+	print("Player picked up a health potion!")
+	healthPotionAmount += 1
+	button.text = ("Health Potions: " + str(healthPotionAmount))

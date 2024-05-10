@@ -544,7 +544,10 @@ offset_bottom = -5.0
 
 [node name="HealthPotion" parent="Potions" instance=ExtResource("9_xnw55")]
 position = Vector2(-132, 55)
+collision_layer = 1
+collision_mask = 2
 
 [connection signal="half_health" from="." to="UI/CanvasLayer/HotBar" method="_on_game_half_health"]
+[connection signal="picked_up_health_potion" from="." to="UI/CanvasLayer/HotBar" method="_on_game_picked_up_health_potion"]
 [connection signal="timeout" from="TimerForHealthDeath" to="." method="_on_timer_for_health_death_timeout"]
 [connection signal="useHealthPotion" from="UI/CanvasLayer/HotBar" to="." method="_on_hot_bar_use_health_potion"]

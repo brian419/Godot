@@ -3,12 +3,16 @@ extends Node2D
 var enemy_scene_path = preload("res://scenes/enemy.tscn")
 var enemy_instances = []
 var enemy_instance
+var potion_scene_path = preload("res://scenes/HealthPotion.tscn")
+var potion_instances = []
+var potion_instance
 var player
 var original_healthbar = 200
 var current_healthbar = original_healthbar
 var random_speed
 
 signal half_health
+signal picked_up_health_potion
 
 
 @onready var timer_for_health_death = $TimerForHealthDeath
@@ -17,6 +21,7 @@ signal half_health
 
 func _ready():
 	spawn_enemy(40)
+	spawn_potions(2)
 	player = get_node("Player")
 	progress_bar.value = original_healthbar
 
@@ -40,6 +45,15 @@ func spawn_enemy(num_enemies):
 	for enemy_instance in enemy_instances:
 			enemy_instance.set_process(true)
 		
+func spawn_potions(num_potions):
+	for i in range(num_potions):
+		potion_instance = potion_scene_path.instantiate()
+		var random_potion_instance = Vector2(randf_range(-100,100), randf_range(-100,100))		
+		potion_instance.position = random_potion_instance
+		
+		add_child(potion_instance)
+		potion_instances.append(potion_instance)
+		potion_instance.body_entered.connect(_on_body_entered_health_potion)
 		
 func _process(delta):
 	# Move enemies towards the player
@@ -93,7 +107,7 @@ func _on_body_entered(body):
 	else:
 		pass
 		
-		
+	
 
 func _on_timer_for_health_death_timeout():
 	Engine.time_scale = 1.0
@@ -103,8 +117,8 @@ func _on_timer_for_health_death_timeout():
 
 
 func _on_hot_bar_use_health_potion():
-	current_healthbar += 10
-	progress_bar.value += 10
+	current_healthbar += 20
+	progress_bar.value += 20
 
 
 
@@ -115,3 +129,17 @@ func _on_hot_bar_use_health_potion():
 # else, skip the spawning of the potion. 
 # so say we rolled a 999 (it goes 0 to 999 for range of random numbers),
 # then that means we had a 1/1000 chance to spawn a potion
+
+func _on_body_entered_health_potion(body):
+	if body.is_in_group("player"):
+		for potion in potion_instances:
+			if potion and not potion.is_queued_for_deletion():
+				if body in potion.get_overlapping_bodies():
+					potion.queue_free()
+					potion_instances.erase(potion)
+					break
+		picked_up_health_potion.emit()
+		
+	else:
+		pass
+
