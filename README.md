@@ -1,4 +1,4 @@
-[Current State of the Secong Godot Game Development 5/09/2024](SecondGame/CurrentState5:09:2024.gif)
+[Current State of the Second Godot Game Development 5/09/2024](SecondGame/Status5:09:2024.gif)
 [Outdated State of the Second Godot Game Development 5/08/2024](SecondGame/CurrentState5:08:2024.gif)
 
 # Godot Game Development Projects
