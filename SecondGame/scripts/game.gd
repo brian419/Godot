@@ -10,6 +10,7 @@ var player
 var original_healthbar = 200
 var current_healthbar = original_healthbar
 var random_speed
+var max_number_health_potions
 
 signal half_health
 signal picked_up_health_potion
@@ -20,9 +21,9 @@ signal picked_up_health_potion
 
 
 func _ready():
-	spawn_enemy(40)
-	spawn_potions(2)
 	player = get_node("Player")
+	spawn_enemy(40)
+	spawn_health_potions(100, player.position)
 	progress_bar.value = original_healthbar
 
 
@@ -45,15 +46,31 @@ func spawn_enemy(num_enemies):
 	for enemy_instance in enemy_instances:
 			enemy_instance.set_process(true)
 		
-func spawn_potions(num_potions):
+func spawn_health_potions(num_potions, player_position):
+	max_number_health_potions = (num_potions / 10)
+	print("Max number of health potions: ", max_number_health_potions)
+	var tilemap = get_node("TileMap") 
+	var tileset = tilemap.tile_set
+	var tile_size = tileset.tile_size
+	
+	var rollValue = 0
+	var correctNumber = 1
+	var countCorrectNumber = 0
+	
 	for i in range(num_potions):
-		potion_instance = potion_scene_path.instantiate()
-		var random_potion_instance = Vector2(randf_range(-100,100), randf_range(-100,100))		
-		potion_instance.position = random_potion_instance
-		
-		add_child(potion_instance)
-		potion_instances.append(potion_instance)
-		potion_instance.body_entered.connect(_on_body_entered_health_potion)
+		rollValue = randi() % 10 #randi() % 10 represents 0 to 9
+		potion_instance = null
+		if (rollValue == correctNumber && countCorrectNumber < max_number_health_potions):
+			potion_instance = potion_scene_path.instantiate()
+			var random_potion_instance = Vector2(randf_range(-100,100), randf_range(-100,100))		
+			var spawn_potion_position = random_potion_instance + player_position
+			countCorrectNumber += 1
+			#print("Number of times it hit the right value: ", countCorrectNumber)
+			potion_instance.position = spawn_potion_position
+			add_child(potion_instance)
+			potion_instances.append(potion_instance)
+			potion_instance.body_entered.connect(_on_body_entered_health_potion)
+	print("Number of health potions spawned: ", countCorrectNumber)
 		
 func _process(delta):
 	# Move enemies towards the player
