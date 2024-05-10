@@ -12,6 +12,9 @@ I am accessing Pixilart.com to generate my pixel asset sprites for the time bein
 
 What I'm using in the terminal command:::
 
+-when I want to put multiple pngs into one .png file to use for animation frames use the following line: 
+convert Frame1.png Frame2.png Frame3.png -append result.png
+
 -use following line to obtain a palette.png from my video .mov file:
 ffmpeg -i "file:/Users/brianson/Desktop/CurrentState5:09:2024.mov" -vf "fps=15,scale=640:-1:flags=lanczos,palettegen" -y palette.png
 
