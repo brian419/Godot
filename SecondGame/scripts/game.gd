@@ -10,7 +10,7 @@ var random_speed
 
 
 @onready var timer_for_health_death = $TimerForHealthDeath
-@onready var progress_bar = $CanvasLayer/PlayerHealthBar/ProgressBar
+@onready var progress_bar = $UI/CanvasLayer/PlayerHealthBar/ProgressBar
 
 
 func _ready():

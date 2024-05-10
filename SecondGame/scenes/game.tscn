@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://crn16nf3j6xx2"]
+[gd_scene load_steps=16 format=3 uid="uid://crn16nf3j6xx2"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_hwcd1"]
 [ext_resource type="PackedScene" uid="uid://coavafh0kcbd" path="res://scenes/player.tscn" id="1_jge0r"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5jbjxx6vbkyo" path="res://scenes/killzone.tscn" id="4_7kucx"]
 [ext_resource type="PackedScene" uid="uid://dsopkvm2kkkwh" path="res://scenes/platform.tscn" id="5_r74mh"]
 [ext_resource type="PackedScene" uid="uid://ddjvc1cuk5miy" path="res://scenes/weapon_sword.tscn" id="6_g57vg"]
+[ext_resource type="PackedScene" uid="uid://dr2nk16vsuh86" path="res://scenes/HotBar.tscn" id="8_4huin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ksuj4"]
 texture = ExtResource("2_ig4ls")
@@ -521,13 +522,22 @@ motion_mode = 1
 wait_time = 0.6
 one_shot = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="Node" parent="."]
 
-[node name="PlayerHealthBar" parent="CanvasLayer" instance=ExtResource("2_n3vi3")]
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+
+[node name="PlayerHealthBar" parent="UI/CanvasLayer" instance=ExtResource("2_n3vi3")]
 offset_left = 42.0
 offset_top = 1.0
 offset_right = 42.0
 offset_bottom = 1.0
 script = SubResource("GDScript_4q711")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HotBar1" parent="UI/HBoxContainer" instance=ExtResource("8_4huin")]
+layout_mode = 2
 
 [connection signal="timeout" from="TimerForHealthDeath" to="." method="_on_timer_for_health_death_timeout"]

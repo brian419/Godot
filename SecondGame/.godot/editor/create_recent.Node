@@ -1,9 +1,10 @@
+Node
+HBoxContainer
 MenuBar
 CanvasLayer
 Control
 ProgressBar
 Timer
-Node
 CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
@@ -11,5 +12,3 @@ AnimationPlayer
 Sprite2D
 AnimatableBody2D
 NavigationAgent2D
-Area2D
-TileMap
