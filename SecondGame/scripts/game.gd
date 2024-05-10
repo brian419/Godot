@@ -106,3 +106,12 @@ func _on_hot_bar_use_health_potion():
 	current_healthbar += 10
 	progress_bar.value += 10
 
+
+
+# Idea for Health Potion Pick-up:
+# Check if it's spawning on top of a tile (dirt block), if it's a valid 
+# spawn location, roll a random number. if that number matches like 1000 then spawn the health 
+# potion on the ground. 
+# else, skip the spawning of the potion. 
+# so say we rolled a 999 (it goes 0 to 999 for range of random numbers),
+# then that means we had a 1/1000 chance to spawn a potion

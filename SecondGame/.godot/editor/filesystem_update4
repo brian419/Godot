@@ -6,4 +6,3 @@ res://scenes/weapon_sword.tscn
 res://scenes/platform.tscn
 res://scenes/Healthbar.tscn
 res://scenes/HotBar.tscn
-res://scripts/HotBar.gd

@@ -43,7 +43,7 @@ offset_left = 23.0
 offset_top = -33.0
 offset_right = 121.0
 offset_bottom = -2.0
-text = "Health Button"
+text = "Health Potion"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
