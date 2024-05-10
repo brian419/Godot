@@ -8,7 +8,13 @@
 This will be a repository documenting my learning for making games within Godot. 
 
 # Programmer's Personal Notes 
-I am accessing Pixilart.com to generate my pixel asset sprites for the time being. Game 2 implementation needs: animation frames for player knight jump and enemy (all their motions), health bar functionality (need to implement one that stays on one part of the screen?), weapon for player (need to figure out how to attach it to the player? update weapon sprite as well, the logic for collision already written and works for placed weapon on game scene), better player movement overall. 
+Game 2 implementation needs?
+- More finalized animation frames and asset pngs for all assets used
+- Weapon functionality (stuck to the player, figure out how to update the player's animation based on if the user presses the hotbar slot for weapon (slot 1 for now)
+- Figure out the player movement, and make it work well. (Will this be gravity based or no gravity? or gravity on certain event actions?
+- Figure out enemy weapon attack (if projectile, how do i show that well on the game screen?)
+
+I am accessing Pixilart.com to generate my pixel asset sprites for the time being. 
 
 What I'm using in the terminal command:::
 
@@ -25,7 +31,7 @@ ffmpeg -i "file:/Users/brianson/Desktop/CurrentState5:09:2024.mov" -i palette.pn
 
 ## Project 2 Overview
 
-This is a Godot game project focusing on an open-world 2D environment with a dynamic spawning system for enemies. The player will explore various scenes including shops, dungeons, and interact with different elements like castles, portals, and special blocks. The game incorporates RPG elements such as leveling up, earning skill points, purchasing weapons and potions, and facing diverse enemy types.
+This is a Godot game project focusing on an open-world 2D environment with enemies tracking towards the player upon the game's initialization. The player has to explore various scenes including shops, dungeons, and other specialized elements like castles, portals, and such in order to obtain items, potions, perks to help fight against enemies. The game incorporates RPG elements such as leveling up, earning skill points, purchasing weapons and potions, and facing diverse enemy types.
 
 ## Current Idea
 
