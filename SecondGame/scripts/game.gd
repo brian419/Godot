@@ -26,7 +26,6 @@ func _ready():
 	spawn_health_potions(1000, player.position)
 	progress_bar.value = original_healthbar
 
-
 func spawn_enemy(num_enemies):
 	for i in range(num_enemies):
 		enemy_instance = enemy_scene_path.instantiate()
@@ -96,7 +95,6 @@ func _process(delta):
 				var sprite = enemy_instance.get_node("EnemyAnimatedSprite2D")
 				sprite.play("idle")
 	
-		
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		current_healthbar -= 1
@@ -124,8 +122,7 @@ func _on_body_entered(body):
 	else:
 		pass
 		
-	
-
+		
 func _on_timer_for_health_death_timeout():
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
@@ -133,16 +130,6 @@ func _on_timer_for_health_death_timeout():
 func _on_hot_bar_use_health_potion():
 	current_healthbar += 20
 	progress_bar.value += 20
-
-
-
-# Idea for Health Potion Pick-up:
-# Check if it's spawning on top of a tile (dirt block), if it's a valid 
-# spawn location, roll a random number. if that number matches like 1000 then spawn the health 
-# potion on the ground. 
-# else, skip the spawning of the potion. 
-# so say we rolled a 999 (it goes 0 to 999 for range of random numbers),
-# then that means we had a 1/1000 chance to spawn a potion
 
 func _on_body_entered_health_potion(body):
 	if body.is_in_group("player"):
