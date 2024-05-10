@@ -1,3 +1,4 @@
+MenuBar
 CanvasLayer
 Control
 ProgressBar
@@ -12,4 +13,3 @@ AnimatableBody2D
 NavigationAgent2D
 Area2D
 TileMap
-StaticBody2D
