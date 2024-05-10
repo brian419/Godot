@@ -1,3 +1,6 @@
+CollisionShape2D
+AnimatedSprite2D
+Area2D
 Button
 Panel
 HBoxContainer
@@ -7,9 +10,5 @@ CanvasLayer
 Control
 ProgressBar
 Timer
-CollisionShape2D
-AnimatedSprite2D
 CharacterBody2D
 AnimationPlayer
-Sprite2D
-AnimatableBody2D
