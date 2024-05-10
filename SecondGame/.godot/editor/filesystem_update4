@@ -7,6 +7,3 @@ res://scenes/platform.tscn
 res://scenes/Healthbar.tscn
 res://scenes/HotBar.tscn
 res://scenes/HealthPotion.tscn
-res://scripts/HealthPotion.gd
-res://scripts/HotBar.gd
-res://scripts/player.gd

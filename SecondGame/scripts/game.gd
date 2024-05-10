@@ -7,7 +7,7 @@ var potion_scene_path = preload("res://scenes/HealthPotion.tscn")
 var potion_instances = []
 var potion_instance
 var player
-var original_healthbar = 200
+var original_healthbar = 50 #200
 var current_healthbar = original_healthbar
 var random_speed
 var max_number_health_potions
@@ -102,8 +102,11 @@ func _on_body_entered(body):
 		if current_healthbar < (original_healthbar / 2):
 			half_health.emit()
 		if current_healthbar <= 0:
+			#Code a loop that loops the player in a rotation (the sprite rotates around)
 			Engine.time_scale = 0.5 
-			body.get_node("CollisionShape2D").queue_free()
+			player.rotation_degrees += 5
+			
+			#body.get_node("CollisionShape2D").queue_free()
 			timer_for_health_death.start()
 
 	#if body.is_in_group("WeaponSword"):
