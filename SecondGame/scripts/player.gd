@@ -57,6 +57,7 @@ func _physics_process(delta):
 
 	
 	var direction = Vector2.ZERO
+	
 	if Input.is_action_pressed("move_left"):
 		direction.x -= 1
 	if Input.is_action_pressed("move_right"):

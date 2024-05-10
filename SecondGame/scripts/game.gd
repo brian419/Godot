@@ -23,7 +23,7 @@ signal picked_up_health_potion
 func _ready():
 	player = get_node("Player")
 	spawn_enemy(40)
-	spawn_health_potions(100, player.position)
+	spawn_health_potions(1000, player.position)
 	progress_bar.value = original_healthbar
 
 
@@ -49,9 +49,9 @@ func spawn_enemy(num_enemies):
 func spawn_health_potions(num_potions, player_position):
 	max_number_health_potions = (num_potions / 30)
 	print("Max number of health potions: ", max_number_health_potions)
-	var tilemap = get_node("TileMap") 
-	var tileset = tilemap.tile_set
-	var tile_size = tileset.tile_size
+	#var tilemap = get_node("TileMap") 
+	#var tileset = tilemap.tile_set
+	#var tile_size = tileset.tile_size
 	
 	var rollValue = 0
 	var correctNumber = 1
@@ -62,7 +62,7 @@ func spawn_health_potions(num_potions, player_position):
 		potion_instance = null
 		if (rollValue == correctNumber && countCorrectNumber < max_number_health_potions):
 			potion_instance = potion_scene_path.instantiate()
-			var random_potion_instance = Vector2(randf_range(-100,100), randf_range(-100,100))		
+			var random_potion_instance = Vector2(randf_range(-1000,1000), randf_range(-1000,1000))		
 			var spawn_potion_position = random_potion_instance + player_position
 			countCorrectNumber += 1
 			#print("Number of times it hit the right value: ", countCorrectNumber)
@@ -129,9 +129,6 @@ func _on_body_entered(body):
 func _on_timer_for_health_death_timeout():
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
-
-
-
 
 func _on_hot_bar_use_health_potion():
 	current_healthbar += 20
