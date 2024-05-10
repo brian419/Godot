@@ -1,10 +1,10 @@
+Node
 CollisionShape2D
 AnimatedSprite2D
 Area2D
 Button
 Panel
 HBoxContainer
-Node
 MenuBar
 CanvasLayer
 Control

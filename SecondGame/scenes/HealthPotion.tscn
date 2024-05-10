@@ -1,13 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqh023dcx1s0s"]
+[gd_scene load_steps=5 format=3 uid="uid://cqh023dcx1s0s"]
+
+[ext_resource type="Texture2D" uid="uid://c5bvj2aeturpk" path="res://assets/sprites/HealthPotionIdle.png" id="1_vlvka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24f5r"]
+atlas = ExtResource("1_vlvka")
+region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1dani"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24f5r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iyp2c"]
+radius = 11.0
 
 [node name="HealthPotion" type="Area2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -9)
 sprite_frames = SubResource("SpriteFrames_1dani")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -10)
 shape = SubResource("CircleShape2D_iyp2c")

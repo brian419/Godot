@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://crn16nf3j6xx2"]
+[gd_scene load_steps=17 format=3 uid="uid://crn16nf3j6xx2"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_hwcd1"]
 [ext_resource type="PackedScene" uid="uid://coavafh0kcbd" path="res://scenes/player.tscn" id="1_jge0r"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dsopkvm2kkkwh" path="res://scenes/platform.tscn" id="5_r74mh"]
 [ext_resource type="PackedScene" uid="uid://ddjvc1cuk5miy" path="res://scenes/weapon_sword.tscn" id="6_g57vg"]
 [ext_resource type="PackedScene" uid="uid://dr2nk16vsuh86" path="res://scenes/HotBar.tscn" id="8_4huin"]
+[ext_resource type="PackedScene" uid="uid://cqh023dcx1s0s" path="res://scenes/HealthPotion.tscn" id="9_xnw55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ksuj4"]
 texture = ExtResource("2_ig4ls")
@@ -538,6 +539,11 @@ offset_left = 10.0
 offset_top = -5.0
 offset_right = 10.0
 offset_bottom = -5.0
+
+[node name="Potions" type="Node" parent="."]
+
+[node name="HealthPotion" parent="Potions" instance=ExtResource("9_xnw55")]
+position = Vector2(-132, 55)
 
 [connection signal="half_health" from="." to="UI/CanvasLayer/HotBar" method="_on_game_half_health"]
 [connection signal="timeout" from="TimerForHealthDeath" to="." method="_on_timer_for_health_death_timeout"]
