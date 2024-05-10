@@ -534,5 +534,11 @@ offset_bottom = 1.0
 script = SubResource("GDScript_4q711")
 
 [node name="HotBar" parent="UI/CanvasLayer" instance=ExtResource("8_4huin")]
+offset_left = 10.0
+offset_top = -5.0
+offset_right = 10.0
+offset_bottom = -5.0
 
+[connection signal="half_health" from="." to="UI/CanvasLayer/HotBar" method="_on_game_half_health"]
 [connection signal="timeout" from="TimerForHealthDeath" to="." method="_on_timer_for_health_death_timeout"]
+[connection signal="useHealthPotion" from="UI/CanvasLayer/HotBar" to="." method="_on_hot_bar_use_health_potion"]

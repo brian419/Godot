@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dr2nk16vsuh86"]
+[gd_scene load_steps=2 format=3 uid="uid://dr2nk16vsuh86"]
+
+[ext_resource type="Script" path="res://scripts/HotBar.gd" id="1_o5qdu"]
 
 [node name="HotBar" type="Control"]
 layout_mode = 3
@@ -8,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("1_o5qdu")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -23,3 +26,25 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -33.0
+offset_right = 121.0
+offset_bottom = -2.0
+text = "Health Button"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

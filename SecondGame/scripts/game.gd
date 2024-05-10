@@ -8,6 +8,8 @@ var original_healthbar = 200
 var current_healthbar = original_healthbar
 var random_speed
 
+signal half_health
+
 
 @onready var timer_for_health_death = $TimerForHealthDeath
 @onready var progress_bar = $UI/CanvasLayer/PlayerHealthBar/ProgressBar
@@ -16,7 +18,6 @@ var random_speed
 func _ready():
 	spawn_enemy(40)
 	player = get_node("Player")
-	print("Player health is at: ", original_healthbar)
 	progress_bar.value = original_healthbar
 
 
@@ -69,6 +70,8 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		current_healthbar -= 1
 		progress_bar.value -= 1
+		if current_healthbar < (original_healthbar / 2):
+			half_health.emit()
 		if current_healthbar <= 0:
 			Engine.time_scale = 0.5 
 			body.get_node("CollisionShape2D").queue_free()
@@ -96,4 +99,10 @@ func _on_timer_for_health_death_timeout():
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
 
+
+
+
+func _on_hot_bar_use_health_potion():
+	current_healthbar += 10
+	progress_bar.value += 10
 
