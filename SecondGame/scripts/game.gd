@@ -102,10 +102,8 @@ func _on_body_entered(body):
 		if current_healthbar < (original_healthbar / 2):
 			half_health.emit()
 		if current_healthbar <= 0:
-			#Code a loop that loops the player in a rotation (the sprite rotates around)
 			Engine.time_scale = 0.5 
 			player.rotation_degrees += 5
-			
 			#body.get_node("CollisionShape2D").queue_free()
 			timer_for_health_death.start()
 
